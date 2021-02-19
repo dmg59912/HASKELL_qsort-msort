@@ -7,7 +7,7 @@ insert :: Int -> [Int]->[Int] --takes and interger returns list of integers who 
 insert x [] = [x] -- base case: insert a Int into an empty list 
 insert x (y:ys)--if there is a value, we look at the values of y and check for the following
     | (x <= y) = x:y:ys-- we look at the first value and check if y comes before or after x, if x is smaller then we put in in the front X:y
-    | otherwise y:(insert x ys) --if y is smaller we put y to the front and recursively insert x into the remaining list
+    | otherwise = y:(insert x ys) --if y is smaller we put y to the front and recursively insert x into the remaining list
 
 isort :: [Int] ->[Int] --takes a list of Ints and returns a list on Ints (sorted)
 isort [] = [] --base case, if list is empty we return and empty list 
